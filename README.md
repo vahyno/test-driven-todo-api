@@ -105,7 +105,7 @@ Take a look at `server.js` and see if you can figure it out!
 
 ## Hints
 <details>
-<summary>**How do you find a specific object by `name` (or `id` or any specific key) in a list of objects?** (Click Here)</summary>
+<summary><em>How do you find a specific object by `name` (or `id` or any specific key) in a list of objects?</em> (Click Here)</summary>
 <br>
 
 ```js
@@ -120,13 +120,14 @@ for(let i=0; i<fruits.length-1; i++)
     }
 });
 
-// good
+// good, but filter returns an array no matter what
 let result = fruits.filter(function(f){
     return f.name === "mango";
 })[0];
+// ^ because filter returns an array of all of the matches
+// we need to have the index at the end here
 
-
-// best (new in ES6, but we can't use it yet!)
+// best (new in ES6!)
 let result = fruits.find(function(f){
     return f.name === "mango";
 });
@@ -136,7 +137,7 @@ let result = fruits.find(function(f){
 </details>
 
 <details>
-<summary>**How do you grab the last element in an array?** (Click Here)</summary>
+<summary><em>How do you grab the last element in an array?</em> (Click Here)</summary>
 <br>
 
 ```js
