@@ -147,7 +147,7 @@ let last = fruits[fruits.length-1];
 </details>
 
 <details>
-<summary>**How do you completely remove an element from an array?** (Click Here)</summary>
+<summary><em>How do you completely remove an element from an array?</em> (Click Here)</summary>
 <br>
 
 ```js
