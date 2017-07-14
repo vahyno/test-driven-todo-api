@@ -37,6 +37,15 @@ app.get('/', function homepage(req, res) {
  * JSON API Endpoints
  */
 
+app.get('/api/todos/search', function search(req, res) {
+  let searchTerm = req.query.q;
+  console.log(searchTerm);
+  let filteredTodos = todos.filter(function(todo){
+    return(todo.task.toLowerCase().includes(searchTerm.toLowerCase()) || todo.description.toLowerCase().includes(searchTerm.toLowerCase()));
+  });
+  res.json({data : filteredTodos});
+});
+
 // get all todos
 app.get('/api/todos', function index(req, res) {
   // send all todos as JSON response
