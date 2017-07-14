@@ -114,7 +114,7 @@ let fruits = [{name: "apricot"}, {name: "mango"}, {name: "kiwi"}];
 // ok (hand-built for loop)
 let result;
 for(let i=0; i<fruits.length-1; i++)
-    if (fruits[i] === "mango"){
+    if (fruits[i].name === "mango"){
         result = fruits[i];
         break;
     }
