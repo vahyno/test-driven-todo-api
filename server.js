@@ -1,5 +1,5 @@
 // require express and other modules
-var express = require('express'),
+let express = require('express'),
     app = express(),
     bodyParser = require('body-parser');
 
@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/public'));
  ************/
 
 // our database is an array for now with some hardcoded values
-var todos = [
+let todos = [
   { _id: 7, task: 'Laundry', description: 'Wash clothes' },
   { _id: 27, task: 'Grocery Shopping', description: 'Buy dinner for this week' },
   { _id: 44, task: 'Homework', description: 'Make this app super awesome!' }
@@ -55,7 +55,7 @@ app.get('/api/todos', function index(req, res) {
 // create new todo
 app.post('/api/todos', function create(req, res) {
   // create new todo with form data (`req.body`)
-  var newTodo = req.body;
+  let newTodo = req.body;
 
   // set sequential id (last id in `todos` array + 1)
   if (todos.length > 0) {
@@ -74,10 +74,10 @@ app.post('/api/todos', function create(req, res) {
 // get one todo
 app.get('/api/todos/:id', function show(req, res) {
   // get todo id from url params (`req.params`)
-  var todoId = parseInt(req.params.id);
+  let todoId = parseInt(req.params.id);
 
   // find todo to by its id
-  var foundTodo = todos.filter(function (todo) {
+  let foundTodo = todos.filter(function (todo) {
     return todo._id == todoId;
   })[0];
 
@@ -88,11 +88,11 @@ app.get('/api/todos/:id', function show(req, res) {
 // update todo
 app.put('/api/todos/:id', function update(req, res) {
   // get todo id from url params (`req.params`)
-  var todoId = parseInt(req.params.id);
+  let todoId = parseInt(req.params.id);
 
   // find todo to update by its id
-  var todoToUpdate = todos.filter(function (todo) {
-    return todo._id == todoId;
+  let todoToUpdate = todos.filter(function (todo) {
+    return todo._id === todoId;
   })[0];
 
   // update the todo's task
@@ -107,11 +107,11 @@ app.put('/api/todos/:id', function update(req, res) {
 // delete todo
 app.delete('/api/todos/:id', function destroy(req, res) {
   // get todo id from url params (`req.params`)
-  var todoId = parseInt(req.params.id);
+  let todoId = parseInt(req.params.id);
 
   // find todo to delete by its id
-  var todoToDelete = todos.filter(function (todo) {
-    return todo._id == todoId;
+  let todoToDelete = todos.filter(function (todo) {
+    return todo._id === todoId;
   })[0];
 
   // remove todo from `todos` array
