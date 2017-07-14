@@ -107,12 +107,13 @@ Take a look at `server.js` and see if you can figure it out!
 <details>
 <summary>**How do you find a specific object by `name` (or `id` or any specific key) in a list of objects?** (Click Here)</summary>
 <br>
+
 ```js
-var fruits = [{name: "apricot"}, {name: "mango"}, {name: "kiwi"}];
+let fruits = [{name: "apricot"}, {name: "mango"}, {name: "kiwi"}];
 
 // ok (hand-built for loop)
-var result;
-for(var i=0; i<fruits.length-1; i++)
+let result;
+for(let i=0; i<fruits.length-1; i++)
     if (fruits[i] === "mango"){
         result = fruits[i];
         break;
@@ -120,37 +121,41 @@ for(var i=0; i<fruits.length-1; i++)
 });
 
 // good
-var result = fruits.filter(function(f){
+let result = fruits.filter(function(f){
     return f.name === "mango";
 })[0];
 
 
 // best (new in ES6, but we can't use it yet!)
-var result = fruits.find(function(f){
+let result = fruits.find(function(f){
     return f.name === "mango";
 });
 
 ```
+
 </details>
 
 <details>
 <summary>**How do you grab the last element in an array?** (Click Here)</summary>
 <br>
+
 ```js
-var fruits = [{name: "apricot"}, {name: "mango"}, {name: "kiwi"}];
-var last = fruits[fruits.length-1];
+let fruits = [{name: "apricot"}, {name: "mango"}, {name: "kiwi"}];
+let last = fruits[fruits.length-1];
 ```
 </details>
 
 <details>
 <summary>**How do you completely remove an element from an array?** (Click Here)</summary>
 <br>
+
 ```js
-var fruits = [{name: "apricot"}, {name: "mango"}, {name: "kiwi"}];
-var apricot_index = 0;
+let fruits = [{name: "apricot"}, {name: "mango"}, {name: "kiwi"}];
+let apricot_index = 0;
 fruits.splice(apricot_index, 1); // remove 1 element (the apricot), starting at a given index (`0`)
 fruits; //=> [{name: "mango"}, {name: "kiwi"}]
 ```
+
 </details>
 
 ## Bonuses
